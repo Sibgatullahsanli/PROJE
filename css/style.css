@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;   /* Sayfamızda padding ve border gibi özellikleri eklediğimizde sayfamızın genişlemesini önlemek için ekledik */
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+}
+
+#menu{
+    height: 80px;
+    padding: 0 20px;
+}
+
+#logo{
+    font-size: 30px;
+    line-height: 80px;  /* üstten ve alttan boşlukları eşitledik*/
+    color:#003666 ;
+    float: left; /* hizalamak için değer verdik logoyu sola yapıştırdık*/
+}
+
+nav{
+    float: right;
+    line-height: 80px; /* satır yükseliğini ayarlayıp üstten altan boşlukları ortalıyor*/
+}
+
+/* nav altındaki a etiketlerine müdahele edecez ve bu etiketin haller var oluyor */
+
+/*todo ilk hali link hali normal gözükme durumu */
+nav a:link{
+    text-decoration: none; /* yazı altındaki çizgileri kaldırdık.*/
+    margin-right: 15px; /* sağ tarıfından bunlara boşluk verdik*/ /*! bu marginle sayfa küçükken olan düzen bozuldu sanki*/
+    color:#19d96f ;
+}
+
+/*todo ikinci hali hover yani üzerine gelindiği zaman */
+nav a:hover{
+    /* text-decoration: underline; (bununla yapsaydık sadece yazı altını çizecekti) */
+    border-bottom: 2px solid #003666 ;
+}
+
+/*todo üçüncü hal active yani mausu tıkladığımız da yani nırakmadığımız halde oluşan durum buna çok gerek yok */
+
+/* dördüncü hal visited tam anlıyamadım ama galiba mausu tıklayıp bıraktıktan sonra aldığı hali olmalı link durumun aynısı buraya aktardık */
+nav a:visited{
+    text-decoration: none; /* yazı altındaki çizgileri kaldırdık.*/
+    margin-right: 25px; /* sağ tarıfından bunlara boşluk verdik*/ /*! bu marginle sayfa küçükken olan düzen bozuldu sanki*/
+    color:#003666 ;
+}
+
+.ikon{
+    margin-right: 7px; /* ikonlarla yazılar arası boşluk verdik*/
+    font-size: 16px; 
+}
+
+#anasayfa{
+    /* background-color: gray; */
+    height: 600px;  /*yükseklik*/
+    background-image: url("../img/r2.jpg");
+    background-size: cover; /* resmi genişlik olarak alanın içine sığdırdık.*/
+    background-position: center; /* resmin orta noktasını baz almış oldu*/
+    background-attachment: fixed; /* bunun sayesinde aşağı kaydırmada fotonun sabit kalmasını sağladık*/
+
+}
+
+#black{
+    height: 600px;
+    background-color: black;
+    opacity: 0.5;  /* resim bölümüne siyah renk verdikten sonra bunun yarısını almasını ve diğer yarınında resimden yansımasını sağladık.*/
+}
+
+/* içerik id li div normal şartlarda resimden sonra konumludur onun resim üzerine konumlanmasını sağlıyacaz */
+#icerik{
+    position: absolute;  /* pozisyoununu değiştirecez dedik*/
+    top: 50%; /* yukardan yüzde 50 ayarla dedik*/
+    left: 40%; /* soldan da yüzde 40 kaydır dedik */
+    transform: translate(-50%,-50%); /* yukardaki ayarları yazının başlangıç noktasına göre ayarladığı için estetik olmadığından burada yazının ortasına göre bu konumlamayı yapmasını sağladık. ilk -50% yazıyı yüzde 50 sola kaydırdı ikinciside yüzde 50 yazıyı yukarı çıkarmaktadır.*/
+    /* todo bu parametrelerin ilk bence yüzde 25 olmalı ki yazı tam ortalanması için. */
+    color: wheat;
+    font-size: 20px;
+
+}
