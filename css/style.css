@@ -191,3 +191,54 @@ span{
 .card:hover{
     border: 2px solid greenyellow;
 }
+
+#ekip{
+    background-color: #003666;
+    padding: 50px;
+    height: 850px;
+    text-align: center;
+}
+
+#h3ekip{
+    color: white;
+}
+
+.sutun-sol-sag{
+    width: 385px;
+    float: left;
+    padding: 50px;
+}
+
+.oval{
+    border-radius: 50%;
+}
+
+.ekipisim{
+    color: white;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.pekip{
+    color: #888;
+    font-size: 20px;
+}
+
+.social{
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+    width:50px; /* genişlik özelliği bende bi fark oluşturmadı*/
+    border-radius: 5px;
+    margin: 5px 10px;
+}
+
+.social:hover{
+    background-color: #888;
+}
+
+.sutun-orta{
+    width: 385px;
+    float: left;
+    padding: 10px;
+}
