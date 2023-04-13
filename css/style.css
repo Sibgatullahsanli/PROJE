@@ -95,7 +95,7 @@ h3{
     font-weight: 600;
 }
 
-#container{
+.container{
     width: 1200px;
     height: auto;
     margin: auto;
@@ -159,4 +159,35 @@ span{
     line-height: 1.8;
     margin-top: 30px;
     font-weight: 100;
+}
+
+#egitimler{
+    background-color: #fff;
+    padding: 50px; /*4 taraftan 50px verdik*/
+    text-align: center;
+    height: 700px;
+
+}
+
+.card{
+    width: 300px;
+    height: 350px;
+    border: 1px solid #ddd;
+    padding: 0;
+    display: inline-block;  /* kartların yanyana düşmeleri için (display: inline-block) yaptık*/
+}
+
+.cardbaslik{
+    font-size: 15px;
+    color: #003666;
+}
+
+.cardp{
+    color: #888;
+}
+
+/*todo mausla kartın üzerine gelindiğinde bir belirginlik oluşması için (.cardhover) özelliği ile ekleme yapacaz*/
+
+.card:hover{
+    border: 2px solid greenyellow;
 }
