@@ -78,5 +78,85 @@ nav a:visited{
     /* todo bu parametrelerin ilk bence yüzde 25 olmalı ki yazı tam ortalanması için. */
     color: wheat;
     font-size: 20px;
+}
 
+#hakkimizda{
+    background-color:#f8f9fa ;
+    padding: 50px;
+    text-align: center;
+    text-transform: capitalize;  /* içeriğimizdeki her kelimenin baş harflerinin büyük olmasını sağladık.*/
+    font-weight: 600; /* yazıya kalınlık verdik.*/
+}
+
+h3{
+    font-size: 55px;
+    color: #003666;
+    text-shadow: 0px 1px 1px black; /* yazıya gölge verdik(bu yazıyı biraz bulanıklaştırdı) yatayda 0px dikeyde 1px ve dağılmasınada 1px*/
+    font-weight: 600;
+}
+
+#container{
+    width: 1200px;
+    height: auto;
+    margin: auto;
+}
+
+#sol{
+    float: left;
+    border-right: 3px solid #445c6e ;
+    font-size: 30px;
+    width: 400px;
+    color: #445c6e;
+}
+
+#h5sol{
+    line-height: 1.6;  /* Normal değerin 1.6 katına yani %160 değerine çıkartıyoruz*/
+    font-size: 22px;
+    font-weight: 600;
+
+}
+
+#h5sol, #sag{
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+}
+
+span{
+    font-size: 50px;
+    margin-right: 7px;
+    line-height: 42px; /* satır yüksekliği*/
+    color: #003666;
+    font-weight: 600; /* yazı kalınlığı*/
+    float: left; /* L harfini bulunduğu div içinde sola al dedik*/
+}
+
+#sag{
+    float: right;  
+    /* todo yazıyı sağa yapıştır dediğimizde yazıyı aşağıya kaydırdı bundan dolayı yazının genişliğine altta müdahele edecez. */
+    width: 750px;
+    color: #999;
+    text-align: left;
+    letter-spacing: 1px; /* harf aralıklarını ayarladık*/
+    font-size: 15px;
+    line-height: 1.8;
+    font-weight: 100;
+}
+
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+
+.mt100{
+    margin-top: 100px;
+}
+
+#pson{
+    color: #999;
+    letter-spacing: 1px;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-top: 30px;
+    font-weight: 100;
 }
