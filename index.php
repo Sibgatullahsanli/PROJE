@@ -250,9 +250,11 @@
 
 
 <?php
-//todo baglanti.php sayfasını buraya çekmek için komut veriyoruz
+//todo baglanti.php sayfasını buraya çekmek için komut veriyoruz orada da veritabanı bağlantımızı yapmıştık.
 
 include("baglanti.php");
+
+// todo Veritabanına veri ekleme işlemlerini yapacaz.
 
 if(isset($_POST["isim"], $_POST["tel"], $_POST["mail"], $_POST["konu"], $_POST["mesaj"]))
 {

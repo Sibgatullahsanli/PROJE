@@ -12,7 +12,7 @@ if(!$baglan)
     die("Veritabanı bağlantı işlemi başarısız".mysqli_connect_errno());
 }
 else{
-    echo "Bağlantı Başarılı";
+    // echo "Bağlantı Başarılı";
 }
 
 ?>

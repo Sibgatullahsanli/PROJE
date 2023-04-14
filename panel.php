@@ -31,22 +31,47 @@
 <h1>A Fancy Table</h1>
 
 <table id="customers">
-  <tr>
-    <th>Ad Soyad</th>
-    <th>Telefon</th>
-    <th>Email</th>
-    <th>Konu</th>
-    <th>Mesaj</th>
-  </tr>
-  <tr>
-    <td>Ali</td>
-    <td>05437866565</td>
-    <td>ali@ali.com</td>
-    <td>Test</td>
-    <td>Hayırlı Olsun</td>
-  </tr>
+    <tr>
+      <th>Ad Soyad</th>
+      <th>Telefon</th>
+      <th>Email</th>
+      <th>Konu</th>
+      <th>Mesaj</th>
+    </tr>
+
+      <!-- php kodlarını bu araya alma sebebimiz tablomuzun başlığından sonra verileri eklemesi gerektiğinden sayfa akışı burada bulunmasını gerektiriyor. -->
+        <?php
+      //todo veri tabanı bağlantı sayfasını çekelim
+      include("baglanti.php");
+
+      // todo Veritanın daki verileri bu sayfaya çekelim
+
+      $sec = "SELECT * FROM iletisim";
+      $sonuc = $baglan->query($sec);
+
+      if($sonuc->num_rows > 0)
+      {
+        while($cek = $sonuc->fetch_assoc())
+          {
+            echo "
+            <tr>
+              <td>$cek[adsoyad]</td>
+              <td>$cek[telefon]</td>
+              <td>$cek[email]</td>
+              <td>$cek[konu]</td>
+              <td>$cek[mesaj]</td>
+            </tr>
+            ";
+          }
+      }else{
+        echo "Veritabanında Kayıtlı Hiçbir veri Bulunamamıştır.";
+      }
+
+      ?>
+  
   
 </table>
 
 </body>
 </html>
+
