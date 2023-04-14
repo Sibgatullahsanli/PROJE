@@ -180,31 +180,34 @@
         <div class="container">
             <h3 id="h3iletisim">İletişim</h3>
 
-            <div id="iletisimopak">
-                <div id="formgroup">
-                    <div id="solform">
-                        <input type="text" name="isim" placeholder="Ad Soyad" required class="form-control">
-                        <input type="text" name="tel" placeholder="Telefon Numarası" required class="form-control">
+            <!-- form etiketini açıp actiona index.php ekleme sebebimiz formdaki veri göndermelerin sağlanması gerekli php komutlarını index sayfasından girdiğimizden dolayıdır.-->
+            <form action="index.php" method="post">
+                <div id="iletisimopak">
+                    <div id="formgroup">
+                        <div id="solform">
+                            <input type="text" name="isim" placeholder="Ad Soyad" required class="form-control">
+                            <input type="text" name="tel" placeholder="Telefon Numarası" required class="form-control">
+                        </div>
+                        <div id="sagform">
+                            <input type="email" name="mail" placeholder="Email Adresiniz" required class="form-control">
+                            <input type="text" name="konu" placeholder="Konu Başlığı Girin" required class="form-control">
+                        </div>
+                        <textarea name="mesaj" id="" cols="30" placeholder="Mesaj Giriniz" rows="10" required class="form-control"></textarea>
+
+                        <input type="submit" value="Gönder">
                     </div>
-                    <div id="sagform">
-                        <input type="emaik" name="mail" placeholder="Email Adresiniz" required class="form-control">
-                        <input type="text" name="konu" placeholder="Konu Başlığı Girin" required class="form-control">
+
+                    <div id="adres">
+                        <h4 id="adresbaslik">Adres : </h4>
+                        <p class="padres">Necip Fazıl Kısakürek Mah.</p>
+                        <p class="padres">Akyıldız Caddesi</p>
+                        <p class="padres">Köprülü Sokak No:123</p>
+                        <p class="padres">0212 389 99 99</p>
+                        <p class="padres">Email : egitimci@egitim.com</p>
+
                     </div>
-                    <textarea name="mesaj" id="" cols="30" placeholder="Mesaj Giriniz" rows="10" required class="form-control"></textarea>
-
-                    <input type="submit" value="Gönder">
                 </div>
-
-                <div id="adres">
-                    <h4 id="adresbaslik">Adres : </h4>
-                    <p class="padres">Necip Fazıl Kısakürek Mah.</p>
-                    <p class="padres">Akyıldız Caddesi</p>
-                    <p class="padres">Köprülü Sokak No:123</p>
-                    <p class="padres">0212 389 99 99</p>
-                    <p class="padres">Email : egitimci@egitim.com</p>
-
-                </div>
-            </div>
+            </form>
 
             <footer>
                 <div id="copyright">
@@ -245,10 +248,31 @@
 </body>
 </html>
 
+
 <?php
 //todo baglanti.php sayfasını buraya çekmek için komut veriyoruz
 
 include("baglanti.php");
+
+if(isset($_POST["isim"], $_POST["tel"], $_POST["mail"], $_POST["konu"], $_POST["mesaj"]))
+{
+    $adsoyad = $_POST["isim"];
+    $telefon = $_POST["tel"];
+    $email = $_POST["mail"];
+    $konu = $_POST["konu"];
+    $mesaj = $_POST["mesaj"];
+
+    $ekle = "INSERT INTO iletisim(adsoyad, telefon, email, konu, mesaj) VALUES ('$adsoyad','$telefon','$email','$konu','$mesaj')";
+
+    if($baglan->query($ekle)===TRUE)
+    {
+        echo "<script>alert('Mesajınız Başarı ile Gönderilmiştir.')</script>";
+    }else{
+        echo "<script>alert('Mesajınız Gönderilken Bir Hata Oluştu.')</script>";
+    }
+
+
+}
 
 
 ?>
