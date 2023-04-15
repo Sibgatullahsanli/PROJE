@@ -52,7 +52,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <body>
 
     <!-- ! form kısmına method="post" olarak ekleme yaptık ki veriler adres çubuğunda açıktan gözükmesinler -->
-<form action="panelgiris.html" method="post" style="max-width:500px;margin:auto">
+<form action="panelgiris.php" method="post" style="max-width:500px;margin:auto">
   <h2>Panel Girişi</h2>
   <div class="input-container">
     <i class="fa fa-user icon"></i>
@@ -69,3 +69,25 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 </body>
 </html>
+
+<?php
+
+// kullanıcı giriş ve çıkış işlemlerinin kontrollerinin sağlanması için oturum başlatıyoruz
+
+session_start();
+
+// verilerin girilip girilmediğini kontrol edecez.
+if(isset($_POST["usrnm"], $_POST["psw"]))
+{
+
+    if($_POST["usrnm"]=="admin" && $_POST["psw"]=="12345")
+    {
+        $_SESSION["user"] = $_POST["usrnm"];
+        header("location:panel.php");
+    }
+    else{
+      echo "<script>alert('Girilen Bilgileri Kontrol Ediniz.')</script>";
+    }
+  
+}
+?>
