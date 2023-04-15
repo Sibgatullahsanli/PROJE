@@ -52,9 +52,13 @@
     
     // todo kullanıcı izinsiz bir giriş yapıyorsa otomatikmen çıkış yapılmasını sağlamak için komut girmek için bir oturum başlatıyoruz burada.
     session_start();
-    if ($_SESSION["user"]=="") {
-      echo  "<script>.location.href='cikis.php'</script>";
+
+    if ($_SESSION["user"]==""){
+      echo  "<script>window.location.href='cikis.php'</script>";
     } else {
+
+      echo "Kullanıcı Adınız :".$_SESSION['user']."<br>";
+      echo "<a href ='cikis.php'>ÇIKIŞ YAP</a><br><br>";
 
       //todo veri tabanı bağlantı sayfasını çekelim
       include("baglanti.php");
@@ -64,7 +68,7 @@
       $sec = "SELECT * FROM iletisim";
       $sonuc = $baglan->query($sec);
 
-      if ($sonuc->num_rows > 0) {
+      if ($sonuc->num_rows>0) {
         while ($cek = $sonuc->fetch_assoc()) {
           echo "
                     <tr>
@@ -80,6 +84,7 @@
         echo "Veritabanında Kayıtlı Hiçbir veri Bulunamamıştır.";
       }
     }
+
     ?>
 
 
